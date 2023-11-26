@@ -12,6 +12,22 @@ class TariffPage extends Page {
     async getSelectedCurrency(currencySymbol) {
          return await $(`//span[@class=\'currency\' and contains(text(),\'${currencySymbol}\')]`).getText();
     }
+
+    async selectNumberEmployees(numberEmployees){
+        await $("//div[@class='tariff-card' and contains(h2, 'HR')]//div[@class='custom-select']").click();
+        await $(`//div[@class='tariff-card' and contains(h2, 'HR')]//option[contains(text(),\'${numberEmployees}\')]`).click();
+    }
+
+    async getPriceValue() {
+        try {
+            return await $("//div[@class='tariff-card' and contains(h2, 'HR')]//span[@class='price-value']").getText()
+        } catch (error) {
+            return await $("//div[@class='individual-price']//h4[@class='price-title']").getText()
+        }
+    }
+    async clickOnGetConsultationButton(){
+        await $("//div[@class='btn-wrap']").click()
+    }
 }
 
 export default new TariffPage();

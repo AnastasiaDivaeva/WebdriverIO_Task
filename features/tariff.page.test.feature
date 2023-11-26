@@ -6,7 +6,7 @@ Feature:This function is responsible for testing the functionality of the page t
     And Selects the <currencyName> currency
     Then Available services' prices are displayed in <currencySymbol>
     Examples:
-      | currencyName  | currencySymbol |
-      | eur           | €              |
-      | usd           | $              |
-      | uah           | ₴              |
+      | currencyName | currencySymbol |
+      | eur          | €              |
+      | usd          | $              |
+      | uah          | ₴              |
