@@ -1,8 +1,7 @@
-import { Given, When, Then } from '@wdio/cucumber-framework';
-import { expect, $ } from '@wdio/globals'
+import {Given, Then, When} from '@wdio/cucumber-framework';
+import {expect} from '@wdio/globals'
 import TariffPage from "../pageobjects/tariff.page.js";
 import HomePage from "../pageobjects/home.page.js";
-
 
 Given(/^Guest open Home Page$/, async () => {
     await HomePage.open()

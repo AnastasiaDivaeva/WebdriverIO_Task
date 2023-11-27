@@ -3,7 +3,7 @@ import TariffPage from "../pageobjects/tariff.page.js";
 
 
 When(/^Selects the number of employees (.+)$/, async (numberEmployees) => {
-    await TariffPage.selectNumberEmployees(numberEmployees)
+    await TariffPage.selectEmployeesCount(numberEmployees)
 });
 Then(/^Check that the price for the service is the following (.*)$/, async (expectedPrice) => {
     const actualPrice = await TariffPage.getPriceValue()

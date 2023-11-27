@@ -1,11 +1,9 @@
 import Page from "./page.js";
-import * as path from "path";
 
 class TariffPage extends Page {
 
-
     async chooseCurrency(currencyName) {
-        await $('//div[@class=\'currency-select\']').click();
+        await $("//div[@class='currency-select']").click();
         await $(`//option[@value=\'${currencyName}\']`).click();
     }
 
@@ -13,9 +11,9 @@ class TariffPage extends Page {
          return await $(`//span[@class=\'currency\' and contains(text(),\'${currencySymbol}\')]`).getText();
     }
 
-    async selectNumberEmployees(numberEmployees){
+    async selectEmployeesCount(employeesCount){
         await $("//div[@class='tariff-card' and contains(h2, 'HR')]//div[@class='custom-select']").click();
-        await $(`//div[@class='tariff-card' and contains(h2, 'HR')]//option[contains(text(),\'${numberEmployees}\')]`).click();
+        await $(`//div[@class='tariff-card' and contains(h2, 'HR')]//option[contains(text(),\'${employeesCount}\')]`).click();
     }
 
     async getPriceValue() {
